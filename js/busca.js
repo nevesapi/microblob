@@ -7,33 +7,30 @@ const divResultados = document.querySelector("#resultados");
 divResultados.classList.add("visually-hidden");
 
 // Monitorando o evento de digitação no campo
-campoBusca.addEventListener("input", async function(){
-    // Verificando se o campo não está vazio
-    if(campoBusca.value !== ""){
-        try {
-            // Enviando os dados do formulário para o PHP
-            const resposta = await fetch("resultados.php", {
-                method: "POST",
-                body: new FormData(formBusca)
-            });
-    
-            // Aguardando e capturando a resposta do PHP
-            const dados = await resposta.text();
+campoBusca.addEventListener("input", async function () {
+  // Verificando se o campo não está vazio
+  if (campoBusca.value !== "") {
+    try {
+      // Enviando os dados do formulário para o PHP
+      const resposta = await fetch("resultados.php", {
+        method: "POST",
+        body: new FormData(formBusca),
+      });
 
-            // Removendo a classe de esconder a div e exibindo os resultados
-            divResultados.classList.remove("visually-hidden");
+      // Aguardando e capturando a resposta do PHP
+      const dados = await resposta.text();
 
-            // Adicionando os resultados na div
-            divResultados.innerHTML = dados;
-        } catch (error) {
-            console.log("Deu ruim na busca: "+error);
-        }
-    } else {
-        // Se o campo estiver vazio, escondendo a div novamente
-        divResultados.classList.add("visually-hidden");
-        divResultados.innerHTML = "";
+      // Removendo a classe de esconder a div e exibindo os resultados
+      divResultados.classList.remove("visually-hidden");
+
+      // Adicionando os resultados na div
+      divResultados.innerHTML = dados;
+    } catch (error) {
+      console.log("Deu ruim na busca: " + error);
     }
+  } else {
+    // Se o campo estiver vazio, escondendo a div novamente
+    divResultados.classList.add("visually-hidden");
+    divResultados.innerHTML = "";
+  }
 });
-
-
-

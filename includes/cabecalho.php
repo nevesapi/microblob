@@ -1,4 +1,5 @@
 <?php
+
 use Microblog\Services\CategoriaServico;
 
 $categoriaServico = new CategoriaServico();

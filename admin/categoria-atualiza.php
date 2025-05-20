@@ -13,10 +13,10 @@ Utils::verificarId($id);
 
 
 $dados = $categoriaServico->buscarPorId($id);
-if(empty($dados)){
-    Utils::alertaErro("Categoria não encontrada.");
-    header("location:noticias.php");
-    exit;
+if (empty($dados)) {
+	Utils::alertaErro("Categoria não encontrada.");
+	header("location:noticias.php");
+	exit;
 }
 
 if (isset($_POST['atualizar'])) {

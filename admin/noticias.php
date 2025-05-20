@@ -6,7 +6,7 @@ use Microblog\Helpers\Utils;
 use Microblog\Services\NoticiaServico;
 
 // Configurar após programar Controle de Acesso
-$tipoUsuario = TipoUsuario::from('admin'); 
+$tipoUsuario = TipoUsuario::from('admin');
 $idUsuario = 1;
 
 $noticiaServico = new NoticiaServico();

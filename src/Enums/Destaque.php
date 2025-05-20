@@ -1,6 +1,9 @@
 <?php
+
 namespace Microblog\Enums;
-enum Destaque:string {
-    case SIM = 'sim';
-    case NAO = 'nao';
+
+enum Destaque: string
+{
+	case SIM = 'sim';
+	case NAO = 'nao';
 }

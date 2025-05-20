@@ -10,7 +10,7 @@ use Microblog\Services\UsuarioServico;
 $usuarioServico = new UsuarioServico();
 
 // Configurar após programar Controle de Acesso
-$dados = $usuarioServico->buscarPorId(1); 
+$dados = $usuarioServico->buscarPorId(1);
 
 if (isset($_POST["atualizar"])) {
 	try {

@@ -18,8 +18,8 @@ let quantidadeDigitada = textResumo.value.length;
 // Chamando a função de atualização do contador de dígitos
 atualizarContador(quantidadeDigitada);
 
-function atualizarContador (quantidade) {
-  // Atualizando o <span> que mostra a contagem 
+function atualizarContador(quantidade) {
+  // Atualizando o <span> que mostra a contagem
   spanMaximo.textContent = quantidade;
 
   // Se a quantidade for zero OU 300 (que é o máximo indicado)
@@ -32,10 +32,10 @@ function atualizarContador (quantidade) {
     spanMaximo.classList.remove("bg-danger");
     spanMaximo.classList.add("bg-success");
   }
-};
+}
 
 // Evento para monitorar a digitação no campo <textarea> do resumo
-textResumo.addEventListener("input", function() {
+textResumo.addEventListener("input", function () {
   // Conforme algo for digitado, atualizamos a variável quantidadeDigitada
   quantidadeDigitada = textResumo.value.length;
 

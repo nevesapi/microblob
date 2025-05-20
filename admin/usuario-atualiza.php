@@ -14,10 +14,10 @@ $usuarioServico = new UsuarioServico();
 $id = Utils::sanitizar($_GET["id"], 'inteiro');
 $dados = $usuarioServico->buscarPorId($id);
 
-if(empty($dados)){
-    Utils::alertaErro("Usuário não encontrado.");
-    header("location:noticias.php");
-    exit;
+if (empty($dados)) {
+	Utils::alertaErro("Usuário não encontrado.");
+	header("location:noticias.php");
+	exit;
 }
 
 if (isset($_POST["atualizar"])) {
@@ -73,12 +73,12 @@ require_once "../includes/cabecalho-admin.php";
 
 			<div class="mb-3">
 				<label class="form-label" for="nome">Nome:</label>
-				<input class="form-control" type="text" id="nome" name="nome"  value="<?= $dados['nome'] ?>">
+				<input class="form-control" type="text" id="nome" name="nome" value="<?= $dados['nome'] ?>">
 			</div>
 
 			<div class="mb-3">
 				<label class="form-label" for="email">E-mail:</label>
-				<input class="form-control" type="email" id="email" name="email"  value="<?= $dados['email'] ?>">
+				<input class="form-control" type="email" id="email" name="email" value="<?= $dados['email'] ?>">
 			</div>
 
 			<div class="mb-3">
@@ -88,7 +88,7 @@ require_once "../includes/cabecalho-admin.php";
 
 			<div class="mb-3">
 				<label class="form-label" for="tipo">Tipo:</label>
-				<select class="form-select" name="tipo" id="tipo" >
+				<select class="form-select" name="tipo" id="tipo">
 					<option value=""></option>
 
 					<option <?php if ($dados['tipo'] === 'editor') echo " selected "; ?>
