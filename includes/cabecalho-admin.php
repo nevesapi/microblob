@@ -1,4 +1,8 @@
 <?php
+
+use Microblog\auth\ControleDeAcesso;
+
+ControleDeAcesso::exigirLogin();
 // DETECTANDO QUAL PÁGINA ESTÁ ABERTA (NECESSÁRIO PARA O SCRIPT DO RODAPE-ADMIN)
 $pagina = basename($_SERVER['PHP_SELF']);
 ?>
