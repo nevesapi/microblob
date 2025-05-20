@@ -1,7 +1,10 @@
 <?php
 require_once "../vendor/autoload.php";
 
+use Microblog\auth\ControleDeAcesso;
 use Microblog\Services\UsuarioServico;
+
+ControleDeAcesso::exigirAdmin();
 
 $usuarioServico = new UsuarioServico();
 $listaDeUsuarios = $usuarioServico->listarTodos();
