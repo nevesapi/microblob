@@ -1,8 +1,11 @@
 <?php
 require_once "../vendor/autoload.php";
 
+use Microblog\auth\ControleDeAcesso;
 use Microblog\Helpers\Utils;
 use Microblog\Services\UsuarioServico;
+
+ControleDeAcesso::exigirLogin();
 
 $usuarioServico = new UsuarioServico();
 
