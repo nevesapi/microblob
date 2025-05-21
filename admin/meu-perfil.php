@@ -1,16 +1,17 @@
 <?php
 require_once "../vendor/autoload.php";
 
+use Microblog\auth\ControleDeAcesso;
 use Microblog\Enums\TipoUsuario;
 use Microblog\Helpers\Utils;
 use Microblog\Helpers\Validacoes;
 use Microblog\Models\Usuario;
 use Microblog\Services\UsuarioServico;
 
-$usuarioServico = new UsuarioServico();
+ControleDeAcesso::exigirLogin();
 
-// Configurar após programar Controle de Acesso
-$dados = $usuarioServico->buscarPorId(1);
+$usuarioServico = new UsuarioServico();
+$dados = $usuarioServico->buscarPorId($_SESSION['id']);
 
 if (isset($_POST["atualizar"])) {
 	try {
@@ -28,16 +29,13 @@ if (isset($_POST["atualizar"])) {
 		$tipo = TipoUsuario::from($dados["tipo"]);
 
 		// O ID do usuário é obtido da sessão (configurar após programar Controle de Acesso)
-		$id = 1;
 
-		$usuario = new Usuario($nome, $email, $senha, $tipo, $id);
+		$usuario = new Usuario($nome, $email, $senha, $tipo, $_SESSION['id']);
 		$usuarioServico->atualizar($usuario);
 
 		// Atualizando a variável de sessão com o novo nome
 		// configurar após programar Controle de Acesso
-
-
-
+		$_SESSION['nome'] = $nome;
 		header("location:index.php?perfil_atualizado");
 		exit;
 	} catch (Throwable $e) {
