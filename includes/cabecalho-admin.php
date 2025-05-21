@@ -38,32 +38,32 @@ $pagina = basename($_SERVER['PHP_SELF']);
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link rounded" href="index.php">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link rounded" href="meu-perfil.php">Meu perfil</a>
+							<a class="nav-link rounded me-1 p-2" href="index.php">Home</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link rounded" href="noticias.php">Notícias</a>
+							<a class="nav-link rounded me-1 p-2" href="meu-perfil.php">Meu perfil</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link rounded me-1 p-2" href="noticias.php">Notícias</a>
 						</li>
 
 						<?php if ($_SESSION["tipo"] === "admin"): ?>
-
 							<li class="nav-item">
-								<a class="nav-link rounded" href="categorias.php">Categorias</a>
+								<a class="nav-link rounded me-1 p-2" href="categorias.php">Categorias</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link rounded" href="usuarios.php">Usuários</a>
+								<a class="nav-link rounded me-1 p-2" href="usuarios.php">Usuários</a>
 							</li>
 						<?php endif; ?>
 
+						<li class="nav-item">
+							<a class="nav-link rounded me-1 p-2" href="../index.php" target="_blank">Área pública</a>
+						</li>
 
 						<li class="nav-item">
-							<a class="nav-link rounded" href="../index.php" target="_blank">Área pública</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link rounded fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
+							<a class="nav-link rounded me-1 p-2 fw-bold" href="?sair"> <i class="bi bi-x-circle"></i> Sair</a>
 						</li>
 					</ul>
 
@@ -76,7 +76,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
 	<main class="flex-shrink-0">
 		<div class="container">
 
-			<dialog id="modal-exclusao" class="mt-4 shadow-lg text-center rounded">
+			<dialog id="modal-exclusao" class="mt-4 shadow-lg text-center rounded me-1 p-2">
 				<h2 class="alert alert-warning">Deseja realmente excluir?</h2>
 				<button id="sim" class="btn btn-success">Sim</button>
 				<button id="nao" class="btn btn-danger" autofocus>Não</button>
